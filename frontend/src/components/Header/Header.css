@@ -1,0 +1,92 @@
+.header{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.first-header{
+    display: flex;
+    width: 100%;
+    height: 30px;
+    justify-content: space-between;
+    align-items: center;
+    color:#007bff;
+    box-sizing: border-box;
+    padding-left: 10px; 
+    padding-right: 10px; 
+}
+.left-f_header{
+   display: flex; 
+}
+.right-f_header{
+    display: flex;
+}
+.right-items {
+    display: flex;
+    gap: 10px;  
+}
+.right-items{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+}
+.second-header{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    background-color: #007bff;
+    align-items: center;
+    border: 1px solid #007bff;
+    color: #fff;
+}
+.second-h_items{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.second-h_items li{
+    list-style: none;
+    display: flex;
+    border-radius: 5px;
+    justify-content:center;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    padding: 5px 10px;
+    
+}
+.second-h_items li:hover{
+    background-color: #f0f8ff;
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.menu-dropdown {
+    display: none; 
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 768px) {
+    .menu-button {
+        display: block;
+        cursor: pointer;
+        color: white;
+        font-weight: bold;
+        background-color: #0056b3;
+        border-radius: 5px;
+    }
+    .second-h_items {
+        flex-wrap: nowrap; /* Prevent wrapping */
+        overflow-x: hidden; /* Prevent x-scroll */
+    }
+
+    .second-h_items li:not(.menu-button) {
+        display: none; /* Hide items except menu button */
+    }
+}
