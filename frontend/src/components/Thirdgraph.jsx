@@ -18,16 +18,7 @@ const data = [
 
 const Thirdgraph = () => {
   return (
-    <div style={{ width: "100%", height: 200 }}>
-      <h3>Liquidity</h3>
-      <div style={styles.moneyInfo}>
-        <div style={styles.moneyItem}>
-          <h4>Total Bank Balance: <span style={styles.moneyValue}>$253k</span></h4>
-        </div>
-        <div style={styles.moneyItem}>
-          <h4>Working Capital: <span style={styles.moneyValue}>$150k</span></h4>
-        </div>
-      </div>
+    <div style={{ width: "100%", height: 250 }}>
       <ResponsiveContainer width="100%" height="100%" >
         <ComposedChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -35,8 +26,8 @@ const Thirdgraph = () => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="cashIn" stackId="a" fill="#d1b3d9" />
-          <Bar dataKey="cashOut" stackId="a" fill="#8c6bb1" />
+          <Bar dataKey="cashIn" stackId="a" fill="#8c6bb1" />
+          <Bar dataKey="cashOut" stackId="a" fill="#d1b3d9" />
           <Line type="monotone" dataKey="netAmount" stroke="#5a3c8a" />
         </ComposedChart>
       </ResponsiveContainer>

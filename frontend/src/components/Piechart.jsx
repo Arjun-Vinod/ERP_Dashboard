@@ -1,8 +1,6 @@
 import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
-
-// Define data for each chart
-const COLORS = ['#0000FF', '#FF8C00'];  // Swapped Blue and Orange
+const COLORS = ['#0000FF', '#FF8C00']; 
 const data1 = [{ name: 'Group A', value: 64 }, { name: 'Group B', value: 36 }];
 const data2 = [{ name: 'Group A', value: 36 }, { name: 'Group B', value: 64 }];
 const data3 = [{ name: 'Group A', value: 38 }, { name: 'Group B', value: 62 }];
@@ -71,7 +69,6 @@ const FirstGraph = () => {
           </div>
         </div>
 
-        {/* Second Graph */}
         <div style={{ width: '30%', height: '300px', position: 'relative' }}>
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
@@ -130,7 +127,6 @@ const FirstGraph = () => {
           </div>
         </div>
 
-        {/* Third Graph */}
         <div style={{ width: '30%', height: '300px', position: 'relative' }}>
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>

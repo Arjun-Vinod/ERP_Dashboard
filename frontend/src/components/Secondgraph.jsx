@@ -1,4 +1,4 @@
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const data = [
   { month: 'Apr', previous: 400, grossSales: 240, budgeted: 280 },
@@ -14,16 +14,17 @@ const data = [
   { month: 'Feb', previous: 1400, grossSales: 139, budgeted: 200 },
   { month: 'Mar', previous: 1500, grossSales: 980, budgeted: 390 },
 ];
-
 const Secondgraph = () => (
+  <ResponsiveContainer width="100%" height={300}>
   <BarChart width={600} height={300} data={data}>
     <XAxis dataKey="month" />
     <YAxis domain={['auto', 'auto']} />
     <Tooltip />
     <Legend />
-    <Bar dataKey="grossSales" fill="#00bcd4" /> {/* Darker Cyan */}
-    <Bar dataKey="budgeted" fill="#8a2be2" /> {/* Darker Violet */}
+    <Bar dataKey="grossSales" fill="#00bcd4" /> 
+    <Bar dataKey="budgeted" fill="#8a2be2" /> 
   </BarChart>
+  </ResponsiveContainer>
 );
 
 export default Secondgraph;

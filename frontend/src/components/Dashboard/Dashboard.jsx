@@ -13,16 +13,33 @@ const Dashboard = () => {
                <FirstGraph/>
             </div>
             <div className="second-left">
-                <h3>Gross sales</h3>
+                <h2>Gross sales</h2>
                 <Secondgraph/>
             </div>
         </div>
         <div className="right-container">
             <div className="first-right">
+                <div className='f-r_heading'>
+                    <h2 id='head'>Liquidity</h2>
+                    <div className='second-heading'>
+                        <div className='head-items'>
+                            <h2>$253k</h2>
+                            <p>Total Bank Balance</p>
+                            
+                        </div>
+                        <div className='head-items'>
+                            <h2>$154k</h2>
+                            <p>Working Capital</p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div className='liquidity'>
                 <Thirdgraph/>
+                </div>
             </div>
             <div className="second-right">
-                <h3>Income and expense</h3>
+                <h2>Income and expense</h2>
                 <IncomeExpensesChart/>
 
             </div>

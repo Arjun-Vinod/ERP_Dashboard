@@ -1,73 +1,92 @@
 import React from "react";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-  LabelList,
-} from "recharts";
 
 const data = [
   {
     name: "Gross Sales",
-    FYTD: 527,
-    PreviousYear: 689,
-    Budgeted: 600,
+    FYTD: 520000,
+    "Previous Year": 690000,
+    Budgeted: 800000,
   },
   {
     name: "Operating Cost",
-    FYTD: 188,
-    PreviousYear: 259,
-    Budgeted: 200,
+    FYTD: 280000,
+    "Previous Year": 250000,
+    Budgeted: 300000,
   },
   {
     name: "Gross Profit",
-    FYTD: 329,
-    PreviousYear: 438,
-    Budgeted: 400,
+    FYTD: 320000,
+    "Previous Year": 430000,
+    Budgeted: 500000,
   },
   {
     name: "Expenses",
-    FYTD: 213,
-    PreviousYear: 277,
-    Budgeted: 230,
+    FYTD: 135000,
+    "Previous Year": 177000,
+    Budgeted: 200000,
   },
   {
     name: "Net Profit",
-    FYTD: 195,
-    PreviousYear: 252,
-    Budgeted: 220,
+    FYTD: 255000,
+    "Previous Year": 270000,
+    Budgeted: 300000,
   },
 ];
 
 const IncomeExpensesChart = () => {
   return (
-    
-    <ResponsiveContainer width="100%" height={250}>
-      <BarChart
-        layout="vertical"
-        data={data}
-        margin={{ top: 20, right: 30, left: 50, bottom: 5 }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis type="number" />
-        <YAxis dataKey="name" type="category" />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="FYTD" fill="#8884d8">
-          <LabelList dataKey="FYTD" position="insideRight" />
-        </Bar>
-        <Bar dataKey="PreviousYear" fill="#82ca9d">
-          <LabelList dataKey="PreviousYear" position="insideRight" />
-        </Bar>
-        <Bar dataKey="Budgeted" fill="#ffc658" />
-      </BarChart>
-    </ResponsiveContainer>
+    <div style={{ padding: "20px" }}>
+      {/* Table Section */}
+      <table border="1" style={{ borderCollapse: "collapse", width: "100%" }}>
+        <thead>
+          <tr>
+            <th>Account Classes</th>
+            <th>FYTD</th>
+            <th>Previous Year</th>
+            <th>FYTD/Budgeted</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((row, index) => (
+            <tr key={index}>
+              <td>{row.name}</td>
+              <td>${(row.FYTD / 1000).toFixed(1)}K</td>
+              <td>${(row["Previous Year"] / 1000).toFixed(1)}K</td>
+              <td>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    width: "100%",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: `${(row.FYTD / row.Budgeted) * 100}%`,
+                      backgroundColor: "#007bff",
+                      height: "10px",
+                      borderRadius: "5px",
+                    }}
+                  />
+                  <div
+                    style={{
+                      width: `${
+                        100 - (row.FYTD / row.Budgeted) * 100
+                      }%`,
+                      backgroundColor: "#ccc",
+                      height: "10px",
+                      borderRadius: "5px",
+                    }}
+                  />
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 
 export default IncomeExpensesChart;
+
